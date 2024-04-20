@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management System</title>
+    <!-- Link to Bootstrap CSS for standard styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add any additional CSS styles or links to external CSS files here -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom CSS styles */
+        body {
+            background-image: url('https://www.247hrm.com/wp-content/uploads/2016/07/tech-background-image-2.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-bottom: 60px; /* Adjust this value to accommodate the height of your footer */
+        }
+        .navbar {
+            background-color: #61aee5; /* Light gray background */
+        }
+        .navbar-brand {
+            color: #007bff; /* Blue color for the brand */
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link {
+            color: #333; /* Dark gray color for the nav links */
+        }
+        .container {
+            position: relative; /* Add this to make sure the footer doesn't overlap the content */
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        p {
+            color:white;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        ul {
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 10px;
+            color: white;
+        }
+        /* Style for the footer */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Attendance Management System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'teacher_details' %}">Teachers</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'admin_login' %}">Admin</a>
+                </li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container">
+        <h1>Welcome to the Attendance Management System</h1>
+        <br><br>
+        <br>
+        <p>This system allows you to efficiently manage attendance records for students and teachers.</p>
+        <p>Key Features:</p>
+        <ul>
+            <li>Record attendance for students and teachers.</li>
+            <li>View attendance reports and statistics.</li>
+            <li>Generate customizable attendance reports for specific time periods.</li>
+            <li>Manage student and teacher information easily.</li>
+            <!-- Add more key features as needed -->
+        </ul>
+        <!-- <img src="https://img.freepik.com/premium-photo/attendance-management-system-words-wooden-blocks-3d-illustration_764664-24101.jpg" style="width: 306px; height: 280px;  margin: -129px 761px ; position: absolute;" alt=""> -->
+        <p>Use the navigation bar above to explore different sections of the system.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Attendance Management System
+    </footer>
+
+    <!-- Add any additional JavaScript files or scripts here -->
+    <script src="script.js"></script>
+</body>
+</html>

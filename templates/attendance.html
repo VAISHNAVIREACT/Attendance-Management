@@ -1,0 +1,96 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <style>
+        body {
+            margin: 100px auto;
+            font-family: Arial, sans-serif;
+            background-image: url('https://t3.ftcdn.net/jpg/03/08/91/98/360_F_308919862_hgbRZeYvO348NYDH7AsQcQ7AHSDbNZ7u.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px whitesmoke;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+            width: calc(100% - 16px);
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h1.ph {
+            text-align: center;
+            font-size: 36px;
+            color: #333; /* Changed from whitesmoke for better contrast */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <form method="post" enctype="multipart/form-data" class="container">
+            {% csrf_token %}
+            <div class="note">
+                <h1 class="ph">ADD ATTENDANCE RECORD</h1>
+            </div>
+            <div class="form-group">
+                <label for="{{ attendancerecordForm.student_name.id_for_label }}">Student Name:</label>
+                {% render_field attendanceRecordForm.student_name class="form-control" placeholder="Enter Student Name" %}
+            </div>
+            <div class="form-group">
+                <label for="{{ attendancerecordForm.course.id_for_label }}">Course Name:</label>
+                {% render_field attendanceRecordForm.course class="form-control" placeholder="Enter Course Name" %}
+            </div>
+            <div class="form-group">
+                <label for="{{ attendanceRecordForm.date.id_for_label }}">Date:</label>
+                {% render_field attendanceRecordForm.date class="form-control" placeholder="Select Date" %}
+            </div>
+            <button type="submit" class="btn btn-primary">Mark Attendance</button>
+        </form>
+    </div>
+</body>
+
+</html>

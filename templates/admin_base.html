@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Link to Bootstrap CSS for standard styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar {
+            background-color: #343a40; /* Dark background for the sidebar */
+            color: #fff; /* White text color for the sidebar */
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            overflow-y: auto;
+        }
+        .sidebar-heading {
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: #fff;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar li {
+            padding: 10px 20px;
+            border-bottom: 1px solid #5a5a5a;
+        }
+        .sidebar li:last-child {
+            border-bottom: none;
+        }
+        .sidebar li a {
+            color: #fff; /* White text color for sidebar links */
+            text-decoration: none;
+            display: block;
+        }
+        .sidebar li a:hover {
+            background-color: #007bff; /* Blue color on hover for sidebar links */
+            color: #fff;
+        }
+        .content {
+            margin-left: 250px; /* Adjust this value according to the sidebar width */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        h1 {
+            color: #007bff;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .content p {
+            color: #666;
+            line-height: 1.6;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <h2 class="sidebar-heading">Admin Dashboard</h2>
+        <ul>
+            <li><a href="{% url 'admin_base' %}">Home</a></li>
+            <li><a href="{% url 'reports' %}">Generate Reports</a></li>
+            <li><a href="{% url 'add_teacher' %}">Add Teachers</a></li>
+
+            <!-- Add more links for other admin functionalities -->
+
+            
+        </ul>
+    </nav>
+
+    <!-- Main content -->
+    <div class="content">
+        {% block content %}
+            <h1>Welcome to the Admin Dashboard</h1>
+            <p>This is the main dashboard page where you can access various administrative functionalities.</p>
+            <p>Use the sidebar links to navigate through different sections.</p>
+        {% endblock %}
+    </div>
+
+    <!-- Add any additional JavaScript files or scripts here -->
+    <script src="script.js"></script>
+</body>
+</html>
